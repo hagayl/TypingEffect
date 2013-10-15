@@ -20,18 +20,21 @@
  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+
 ;(function($){
-    $.fn.extend({
-        typingEffect: function(options) {
-            this.defaultOptions = {};
 
-            var settings = $.extend({}, this.defaultOptions, options);
+    $.fn.typingEffect = function(options){
 
-            return this.each(function() {
-                var $this = $(this);
+        var settings = $.extend({
+            color: "red",
+            backgroundColor: "blue"
+        }, options );
+
+        return this.each(function() {
+            var $this = $(this);
+            $this.css('color', settings.color);
+        });
+    };
 
 
-            });
-        }
-    });
 })(jQuery);

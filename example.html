@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>TypingEffect Usage Example</title>
 </head>
 <body>
+
+    <div id="first">Hello World 1</div>
+    <div id="second">Hello World 2</div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.typingeffect.js"></script>
+    <script type="text/javascript">
+        $("#first").typingEffect();
+        $("#second").typingEffect({color:'blue'});
+    </script>
 
 </body>
 </html>
