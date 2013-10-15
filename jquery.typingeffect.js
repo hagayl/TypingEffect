@@ -32,8 +32,19 @@
 
         return this.each(function() {
             var $this = $(this);
-            $this.css('color', settings.color);
+            var fullText = $this.text();
+
+
+            var chars = fullText.length;
+            if(chars > 0){
+                setInterval(function(){
+                    fullText = fullText.slice(0, fullText.length-1);
+                    $this.text(fullText);
+                }, 300)
+            }
         });
+
+
     };
 
 
