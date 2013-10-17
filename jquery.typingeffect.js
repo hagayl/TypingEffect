@@ -23,29 +23,67 @@
 
 ;(function($){
 
+//http://burnmind.com/tutorials/how-to-create-a-typing-effect-an-eraser-effect-and-a-blinking-cursor-using-jquery
     $.fn.typingEffect = function(options){
-
-        var settings = $.extend({
-            color: "red",
-            backgroundColor: "blue"
-        }, options );
+        var settings = $.extend({ speed: 50, randomizationSpeedRange: 20 }, options );
 
         return this.each(function() {
             var $this = $(this);
             var fullText = $this.text();
+            var fullLength = fullText.length;
+            var charIndex = 0;
+            var updateText;
 
-
-            var chars = fullText.length;
-            if(chars > 0){
-                setInterval(function(){
-                    fullText = fullText.slice(0, fullText.length-1);
-                    $this.text(fullText);
-                }, 300)
+            function type(){
+                updateText = fullText.substring(0, charIndex++);
+                $this.text(updateText);
+                if(charIndex <= fullLength){
+                    setTimeout(type, randomizeRange(settings.speed, settings.randomizationSpeedRange));
+                }
             }
+
+            function randomizeRange(num, range){
+                if(range>num) return num;
+                var to = num + range;
+                var from = num - range;
+                return Math.floor(Math.random() * (to-from+1) + from);
+            }
+            type();
         });
-
-
     };
 
 
 })(jQuery);
+
+
+/*
+var p = function(a) {
+	var b = n.text(), c = null, d = function(h) {
+		c && clearTimeout(c);
+		c = setTimeout(function() {
+			var c = b.length;
+			if (c != 0) {
+				b = b.slice(0, h);
+				n.text(b);
+				d(c - 2)
+			} else
+				f(a)
+		}, 100)
+	}, 
+	
+	f = function(a) {
+		var c = g[a], a = q[a];
+		var d = null, f = function(a) {
+			d && clearTimeout(d);
+			d = setTimeout(function() {
+				if (b.length !=  c.length) {
+					b = b + c[a];
+					n.text(b);
+					f(a + 1)
+				}
+			}, 100)
+		};
+		f(0)
+	};
+	d(b.length - 1)
+}*/

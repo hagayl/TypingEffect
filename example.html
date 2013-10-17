@@ -5,14 +5,17 @@
 </head>
 <body>
 
-    <div id="first">Hello World 1...</div>
-    <div id="second">Hello 2!</div>
+    <div id="first" class="type">Hello World 1... text bla bla <span id="doIt">JUST DO IT</span> all the way</div>
+    <div id="second">Hello 2! yada yada yada</div>
+    <div id="third" class="type">Some more text goes here, lorem ipsum dolor</div>
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="jquery.typingeffect.js"></script>
     <script type="text/javascript">
-        $("#first").typingEffect();
-        $("#second").typingEffect({color:'blue'});
+        $(".type").typingEffect({randomizationSpeedRange: 300, speed: 100});
+//        $("#first").typingEffect();
+//        $("#doIt").typingEffect();
+//        $("#second").typingEffect({color:'blue', speed: 50});
     </script>
 
 </body>
