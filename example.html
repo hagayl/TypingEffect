@@ -5,17 +5,25 @@
 </head>
 <body>
 
-    <div id="first" class="type">Hello World 1... text bla bla <span id="doIt">JUST DO IT</span> all the way</div>
-    <div id="second">Hello 2! yada yada yada</div>
-    <div id="third" class="type">Some more text goes here, lorem ipsum dolor</div>
+    <div id="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget ipsum vitae odio dapibus dapibus vitae id risus.
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut metus urna, auctor ac turpis sed, egestas aliquet quam.
+        Fusce consequat accumsan quam, ut interdum metus fermentum sit amet. Aliquam vel ante risus. Integer feugiat faucibus egestas.
+        Interdum et malesuada fames ac ante ipsum primis in faucibus. In egestas arcu neque, vel porttitor metus convallis eget.
+        Integer posuere ligula sit amet mi hendrerit rhoncus. Nullam feugiat sapien ac neque viverra, a sollicitudin justo aliquet.
+        Aenean ornare, nulla sit amet fringilla rhoncus, ante magna iaculis nulla, nec congue massa sem nec quam. Nullam nec vehicula leo.
+        Fusce venenatis, libero vitae aliquet fringilla, sem risus blandit mi, eget vehicula enim dui id eros. Curabitur quis elementum nunc.
+        Duis malesuada vitae ligula vitae euismod.
+    </div>
+
+    <div id="bottom">Hello 2! yada yada yada</div>
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="jquery.typingeffect.js"></script>
     <script type="text/javascript">
-        $(".type").typingEffect({randomizationSpeedRange: 300, speed: 100});
-//        $("#first").typingEffect();
-//        $("#doIt").typingEffect();
-//        $("#second").typingEffect({color:'blue', speed: 50});
+//        $(".type").typingEffect({randomizationSpeedRange: 300, speed: 100});
+        $("#content").typingEffect();
+         $("#bottom").typingEffect();
     </script>
 
 </body>
