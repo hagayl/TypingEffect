@@ -22,8 +22,6 @@
  */
 
 ;(function($){
-
-//http://burnmind.com/tutorials/how-to-create-a-typing-effect-an-eraser-effect-and-a-blinking-cursor-using-jquery
     $.fn.typingEffect = function(options, callback){
         var settings = $.extend({ speed: 50 }, options );
         var SPEED_RANGE = 0.5;
@@ -90,36 +88,3 @@
         });
     };
 })(jQuery);
-
-
-/*
-var p = function(a) {
-	var b = n.text(), c = null, d = function(h) {
-		c && clearTimeout(c);
-		c = setTimeout(function() {
-			var c = b.length;
-			if (c != 0) {
-				b = b.slice(0, h);
-				n.text(b);
-				d(c - 2)
-			} else
-				f(a)
-		}, 100)
-	}, 
-	
-	f = function(a) {
-		var c = g[a], a = q[a];
-		var d = null, f = function(a) {
-			d && clearTimeout(d);
-			d = setTimeout(function() {
-				if (b.length !=  c.length) {
-					b = b + c[a];
-					n.text(b);
-					f(a + 1)
-				}
-			}, 100)
-		};
-		f(0)
-	};
-	d(b.length - 1)
-}*/
